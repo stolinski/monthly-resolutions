@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @resolve.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @resolve.date %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @resolve.completed %>
+</p>
+
+<p>
+  <b>Compleated date:</b>
+  <%= @resolve.compleated_date %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @resolve.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_resolf_path(@resolve) %> |
+<%= link_to 'Back', resolves_path %>
