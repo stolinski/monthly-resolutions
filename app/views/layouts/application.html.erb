@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Resolution</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header class="top-bar">
+		<div class="wrapper">
+			<h1><a href="/">ResolvePath</a></h1>
+			<ul>
+				<li><a href="/accounts/register/">Create Account</a></li>
+				<li class="last"><a href="/accounts/login/">Login</a></li>
+				<li><a href="/resolution/">My Resolutions</a></li>
+				<li class="last"><a href="#">Settings</a>
+					<ul class="drop">
+						<li><a href="/accounts/logoff/">Sign Out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<%= yield %>
+<footer>
+		<section class="footer-nav">
+			<ul>
+				<li>Nav Item #1</li>
+			</ul>
+		</section>
+		<section class="copyright">
+			<p>&copy; FoldedCat</p>
+		</section>
+	</footer>
 </body>
 </html>
