@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+@import "bootstrap";
+
+
+
+
+.navbar .container {
+	width:100%;
+	.logo {
+		float:left;
+	}
+}
