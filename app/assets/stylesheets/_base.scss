@@ -16,7 +16,7 @@ v0.1*/
 
 
 /* A less configurable but more areodynamic transition mixin */
-@mixin transition($sec: 0.2s) {
+@mixin transition($sec: 0.15s) {
   -webkit-transition: all $sec ease-out;
      -moz-transition: all $sec ease-out;
       -ms-transition: all $sec ease-out;

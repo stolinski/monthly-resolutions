@@ -5,36 +5,15 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= render '/layouts/shim'%>
 </head>
 <body>
-	<header class="navbar">
-		<div class="navbar-inner">
-			<div class='wrapper'>
-				<h1 class="logo"><a href="/">Monthly Resolutions</a></h1>
-				<nav>
-					<ul class="nav pull-right">
-						<li><a href="/resolution/">My Resolutions</a></li>
-						<li class="last"><a href="#">Settings</a>
-							<!-- <ul class="drop">
-							<li><a href="/accounts/logoff/">Sign Out</a></li></ul> -->
-						<!--<li><a href="/accounts/register/">Create Account</a></li>
-						<li class="last"><a href="/accounts/login/">Login</a></li> -->
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<%= yield %>
-<footer>
-		<section class="footer-nav">
-			<ul>
-				<li>Nav Item #1</li>
-			</ul>
-		</section>
-		<section class="copyright">
-			<p>&copy; FoldedCat</p>
-		</section>
-	</footer>
+	<div class="page">
+	<%= render '/layouts/header' %>
+	<section class="main-contain">
+		<%= yield %>
+	</section>
+	<%= render '/layouts/footer' %>
+	</div>
 </body>
 </html>

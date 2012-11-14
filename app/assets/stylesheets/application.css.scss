@@ -14,8 +14,36 @@
 
 @import "base";
 // @import "bootstrap";
+@import "susy";
 
 
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+// border-box-sizing()
+@include border-box-sizing;
+
+.page {
+  // page acts as a container for our grid.
+  // @include container;
+  width:100%;
+  // header and footer are full-width by default.
+  header, footer { clear: both; }
+
+  // nav spans 3 columns of total 12.
+  nav { @include span-columns(5,12); }
+
+  .main-contain {
+    @include span-columns(10, 12);
+    @include push(1);
+    // main content spans 6 of those 9 columns.
+    .main { @include span-columns(6,9); }
+
+    // secondary content spans the final 3 (omega) of 9 columns.
+    .secondary { @include span-columns(3 omega,9); }
+  }
+}
 
 p, li {
 	font-size:16px;
@@ -60,8 +88,8 @@ p, li {
 					padding:14px 30px;
 					display:block;
 					height:50px;
-					border-left:1px solid #c6c4c4;
-					border-right:1px solid #c6c4c4;
+					border-left:1px solid #ddd;
+					border-right:1px solid #ccc;
 					text-decoration:none;
 					color:#787878;
 					@include transition;
@@ -73,7 +101,7 @@ p, li {
 				}
 				&.last {
 					a {
-						border-left:0;
+						// border-left:0;
 					}
 				}
 			}
