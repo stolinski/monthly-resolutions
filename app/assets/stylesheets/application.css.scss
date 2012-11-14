@@ -11,14 +11,76 @@
  *= require_self
  *= require_tree .
  */
-@import "bootstrap";
+
+@import "base";
+// @import "bootstrap";
 
 
 
+p, li {
+	font-size:16px;
+	color:$text;
+	font-family:'Open Sans';
+}
 
-.navbar .container {
+.navbar {
+	background: #dddddd;
+	@include gradient(#ddd, #eee);
+	height:50px;
+	border-bottom:2px solid #c6c4c4;
 	width:100%;
-	.logo {
+ 	.logo {
+		font-family:'Bree Serif';
+		font-weight:normal;
 		float:left;
+		margin:5px 0 0 0;
+		font-size:2.2em;
+		a {
+			@include transition;
+			text-decoration:none;
+			color:$red;
+			@include text-shadow(1px 1px 1px #666);
+			&:hover {
+				color:#333;
+			}
+		}
 	}
+	.wrapper {
+		width: 80%;
+		margin:0 auto;
+		nav > ul {
+			margin:0;
+			float:right;
+			> li {
+				float:left;
+				margin:0;
+				list-style:none;
+				position:relative;
+				> a {
+					padding:14px 30px;
+					display:block;
+					height:50px;
+					border-left:1px solid #c6c4c4;
+					border-right:1px solid #c6c4c4;
+					text-decoration:none;
+					color:#787878;
+					@include transition;
+					&:hover {
+						color:#fff;
+						@include box-shadow(inset 0 2px 10px rgba(#333, 0.4));
+						background:#c6c4c4;
+					}
+				}
+				&.last {
+					a {
+						border-left:0;
+					}
+				}
+			}
+		}
+	}
+}
+.btn {
+	@include button($blue);
+	color:white;
 }
