@@ -52,6 +52,10 @@ p, li {
 }
 
 .navbar {
+  -webkit-animation: faded 3s; /* Safari 5, Chrome */
+     -moz-animation: faded 3s; /* Firefox 5-15 */
+       -o-animation: faded 3s; /* Opera 12+ */
+          animation: faded 3s; /* Safari 5, Chrome, Firefox 16+ */
 	background: #dddddd;
 	@include gradient(#ddd, #eee);
 	height:50px;
@@ -69,7 +73,7 @@ p, li {
 			color:$blue;
 			@include text-shadow(1px 1px 1px #666);
 			&:hover {
-				color:#333;
+				color:#aaa;
 			}
 		}
 	}
@@ -88,8 +92,8 @@ p, li {
 					padding:14px 30px;
 					display:block;
 					height:50px;
-					border-left:1px solid #ddd;
-					border-right:1px solid #ccc;
+					border-left:1px solid #ccc;
+					border-right:1px solid #ddd;
 					text-decoration:none;
 					color:#787878;
 					@include transition;
@@ -111,4 +115,23 @@ p, li {
 .btn {
 	@include button($blue);
 	color:white;
+}
+
+
+
+@-webkit-keyframes faded {
+  0%   { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+@-moz-keyframes faded {
+  0%   { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+@-o-keyframes faded {
+  0%   { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+@keyframes faded {
+  0%   { opacity: 0.0; }
+  100% { opacity: 1.0; }
 }
