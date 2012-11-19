@@ -26,6 +26,7 @@ group :assets do
   gem 'compass-rails'
   gem 'susy'
   gem 'bootstrap-sass', '2.0.4'
+  gem 'font-awesome-sass-rails'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
 end

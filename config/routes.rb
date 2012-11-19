@@ -3,7 +3,8 @@ Resolution::Application.routes.draw do
   resources :users
   
   match '/signup', :to => "users#new"
-
+  match '/resolutions', :to => "posts#index"
+  match '/posts-all', :to => "posts#indexall"
   match '/about', :to => "static_pages#about"
   match '/contact', :to => "static_pages#contact"
   match '/help', :to => "static_pages#help"

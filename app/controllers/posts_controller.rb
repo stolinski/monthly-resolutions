@@ -3,6 +3,17 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    time = Time.new
+    @month = time.strftime("%B")
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @posts }
+    end
+  end
+
+
+  def indexall
+    @posts = Post.all
 
     respond_to do |format|
       format.html # index.html.erb
