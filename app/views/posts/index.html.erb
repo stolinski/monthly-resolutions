@@ -1,12 +1,12 @@
-<h1><%= @month %></h1>
+<h1 class="page-title"><%= @month %></h1>
 
 
 <% @posts.each do |post| %>
 <div class="res">
     <h3 class="res-title"><%= post.title %></h3>
-    <span><%= link_to(edit_post_path(post)) do %><i class="icon-edit"></i>
+    <span><%= link_to(edit_post_path(post)) do %><i class="icon-edit"></i><span class="tool">Edit</span>
     <% end %>
-    <%= link_to(post, :method => :delete, :data => { :confirm => 'Are you sure?' }) do %><i class="icon-remove-sign"></i>
+    <%= link_to(post, :method => :delete, :data => { :confirm => 'Are you sure?' }) do %><i class="icon-remove-sign"></i><span class="tool">Delete</span>
         <% end %>
     </span>
 </div>

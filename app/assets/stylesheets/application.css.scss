@@ -26,8 +26,6 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 @include border-box-sizing;
 
 .page {
-  // page acts as a container for our grid.
-  // @include container;
   width:100%;
   // header and footer are full-width by default.
   header, footer { clear: both; }
@@ -37,96 +35,98 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
   .main-contain {
     @include span-columns(10, 12);
-    @include push(1);
     // main content spans 6 of those 9 columns.
     .main { @include span-columns(6,9); }
 
     // secondary content spans the final 3 (omega) of 9 columns.
     .secondary { @include span-columns(3 omega,9); }
+    @include push(1);
   }
+  // page acts as a container for our grid.
+  // @include container;
 }
 body {
-	// @include gradient(white);
+	// @include gradient(white)
 }
 h1 {
-
+	font-family:'Bree Serif';
 }
 h2 {
-
+	font-family:'Bree Serif';
 }
 h3 {
 	font-family:"Open Sans", sans-serif;
 }
 .page-title {
-	font-family:'Bree Serif';
+	font-size:2.5em;
 }
 .res-title {
 	display:inline;
-	font: 2.25em 'Bree Serif';
+	margin-right:30px;
 	color:$blue;
+	font: 2.25em 'Bree Serif';
 }
 
 p, li {
-	font-size:16px;
 	color:$text;
+	font-size:16px;
 	font-family: "Open Sans", sans-serif;
 }
 
 .navbar {
-	background: #dddddd;
+	@include gradient(#ddd, #eee);
+	width:100%;
 	height:55px;
 	border-bottom:2px solid #c6c4c4;
-	width:100%;
-	@include gradient(#ddd, #eee);
-	@include anim(faded, 2s);
+	background: #dddddd;
  	.logo {
-		font-family:'Bree Serif';
-		font-weight:normal;
 		float:left;
 		margin:0;
+		font-weight:normal;
 		font-size:2.2em;
 		a {
-			text-decoration:none;
-			color:$blue;
 			@include text-shadow(1px 1px 1px #666);
-			@include transition;
+			color:$blue;
+			text-decoration:none;
 			&:hover {
 				color:#aaa;
 			}
+			@include transition;
 		}
 	}
 	.wrapper {
-		width: 80%;
 		margin:0 auto;
+		width: 80%;
 		nav > ul {
-			padding:0;
-			margin:0;
 			float:right;
-			border-left:1px solid #ddd;
+			margin:0;
+			padding:0;
 			border-right:1px solid #ccc;
+			border-left:1px solid #ddd;
 			> li {
+				position:relative;
 				float:left;
 				margin:0;
 				list-style:none;
-				position:relative;
 				> a {
-					padding:14px 30px;
-					display:block;
-					height:55px;
-					border-left:1px solid #ccc;
-					border-right:1px solid #ddd;
-					text-decoration:none;
-					color:#787878;
 					@include transition;
+					display:block;
+					padding:14px 30px;
+					height:55px;
+					border-right:1px solid #ddd;
+					border-left:1px solid #ccc;
+					color:#787878;
+					text-decoration:none;
 					&:hover {
-						color:#333;
-						background:#c6c4c4;
 						@include box-shadow(inset 0 2px 10px rgba(#333, 0.4));
+						background:#c6c4c4;
+						color:#333;
 					}
 				}
 			}
 		}
 	}
+	@include anim(faded, 2s);
 }
 .btn {
 	@include button($blue);
@@ -139,11 +139,46 @@ p, li {
 	}
 }
 .res {
-	span {
+	> span {
 		a {
+			position:relative;
 			text-decoration:none;
+			.tool {
+				@include border-radius(5px);
+				position: absolute;
+				top: 27px;
+				left: -15px;
+				padding: 7px;
+				border: solid 1px #ddd;
+				background: #eee;
+				color: #ccc;
+				opacity:0;
+				&::after {
+					position: absolute;
+					top: -20px;
+					left: 31%;
+					border-top: solid 10px transparent;
+					border-right: solid 10px transparent;
+					border-bottom: solid 10px #ddd;
+					border-left: solid 10px transparent;
+					content: '';
+				}
+				@include transition;
+			}
+		&:hover {
+			.tool {
+				opacity:1.0;
+			}
+		}
 			i {
+				@include transition;
 				padding:5px;
+ 				
+				font-size:1.6em;
+				opacity:0.2;
+				&:hover {
+					opacity:1.0;
+				}
 			}
 		}
 	}
@@ -154,12 +189,6 @@ p, li {
 }
 .icon-remove-sign {
 	color:$red;
-	font-size:1.6em;
-	opacity:0.2;
-	@include transition;
-	&:hover {
-		opacity:1.0;
-	}
 }
 
 
